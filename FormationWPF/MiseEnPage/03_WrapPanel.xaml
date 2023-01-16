@@ -1,0 +1,23 @@
+﻿<Window x:Class="FormationWPF.MiseEnPage._03_WrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.MiseEnPage"
+        mc:Ignorable="d"
+        Title="_03_WrapPanel" Height="100" Width="300">
+    <WrapPanel Orientation="Vertical">
+        <!--
+            Idem que StackPanel sauf qu'il y aura un wrap en bout de ligne (saut de ligne)
+            Le centrage est effectué en rapport avec l'élémet le plus large
+            Par defaut l'empilement est horizontal
+        -->
+        <Button Content="Button1" x:Name="button1"/>
+        <Button Content="Button2" x:Name="button2" Height="23" Width="140"/>
+        <Button Content="Button3" x:Name="button3" Height="23" Width="50"/>
+        <Button Content="Button4" x:Name="button4" Height="23" Width="50"/>
+        <Button Content="Button5" x:Name="button5" Height="23" Width="50"/>
+        <Button Content="Button6" x:Name="button6"/>
+
+    </WrapPanel>
+</Window>
