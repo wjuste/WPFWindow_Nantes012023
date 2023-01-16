@@ -1,0 +1,148 @@
+﻿<Window x:Class="FormationWPF.Controles._01_ControleCommunWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.Controles"
+        mc:Ignorable="d"
+        Title="_01_ControleCommunWPF" Height="600" Width="900" ResizeMode="NoResize">
+    <Grid>
+        <!--3 colonnes-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--7 ligne-->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--Le contrôle TextBlock est le contrôle le plus adapté pour l’affichage de texte. -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">
+            <Bold>WPF</Bold> c'est facile
+            <Italic>
+                Pour le
+            </Italic>
+            <LineBreak />
+            moment
+        </TextBlock>
+
+        <!--Le contrôle TextBox est le contrôle le plus simple et le plus utilisé pour l’édition de texte-->
+        <Label Content="TextBox + ContextMenu" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="textBox1" Grid.Column="2" Height="40" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!--
+                Creation d'un Menu
+                Avec un sous Menu Effacer 
+                permettant de supprimer les données du champs de saisies
+            -->
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem  Header="Effacer" x:Name="cmEffacer" Click="cmEffacer_Click" />
+                </ContextMenu>
+            </TextBox.ContextMenu>
+
+        </TextBox>
+
+        <!--
+            Le contrôle RichTextBox permet d’afficher du texte au format RTF (Fichier de traitement de texte au format standard Rich Text Format ;
+            ex : comme l’application WordPad de windows). 
+            Par exemple avec ce contrôle on peut mettre en place , Activer la vérification orthographique selon le pays
+        -->
+        <Label Content="RichTextBox avec correction"  Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <RichTextBox Grid.Column="1" Grid.Row="1" Height="50" Width="220" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                     SpellCheck.IsEnabled="true" Language="fr-FR"/>
+
+        <!--CheckBox : Case à cocher-->
+        <!--Quand on clique sur la case à coher   ==> remplacer le Contenu du checkBox par "You agree !-->
+        <CheckBox Grid.Column="2" Grid.Row="1"  Content="CheckBox" x:Name="checkBox1" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="checkBox1_Checked"/>
+
+
+        <StackPanel Grid.Row="2" x:Name="stackPanel1">
+            <RadioButton x:Name="radioButton1" Content="RadioButton1" Height="16"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2" GroupName="grôupe1"/>
+            <RadioButton x:Name="radioButton2" Content="RadioButton2" Height="16"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2" GroupName="grôupe1"/>
+            <RadioButton x:Name="radioButton3" Content="RadioButton3" Height="16"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2" GroupName="grôupe1"/>
+        </StackPanel>
+
+        <!--
+            SelectionChanged se produit lorsqu'on selectionne un des éléments du ComboBox
+            comboBox1_SelectionChanged : La methode qui va traiter cet événement va afficher un
+            MessageBox avec l'élément selectionné
+        -->
+        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="combo1" Height="30" Width="200" VerticalAlignment="Center" 
+                  HorizontalAlignment="Center" Foreground="#FFD8F9F9" Background="Black"  SelectionChanged="combo1_SelectionChanged">
+            <ComboBoxItem Content="Litterature"  Background="Black" />
+            <ComboBoxItem Content="Film" Background="Black" />
+            <ComboBoxItem Content="Histoire-Géographie" Background="Black"/>
+            <ComboBoxItem Content="Philosophie" Background="Black"/>
+        </ComboBox>
+
+        <!--ListBox -->
+        <!--
+            Le contrôle ListBox affiche une liste d’élément dont un ou plusieurs sont sélectionnable. 
+            Le mode de sélection est défini par la valeur de la propriété SelectionMode  
+                	-  Single signifie qu’une seule valeur est sélectionnable
+                    -	Multiple et Extended permettent la sélection multiple 
+        
+            La différence entre ces deux derniers modes est la suivante : 
+            -	Multiple : La sélection ou désélection d’un élément est faite par un simple clic. 
+            -	Extended : Il est nécessaire de maintenir la touche [Ctrl] appuyée pendant les opérations de sélection/désélection. 
+
+            La liste des données contenues par le contrôle est fournie par l’intermédiaire de ses propriétés Items ou ItemsSource.
+        -->
+        <TextBox Grid.Row="3" Grid.RowSpan="2" x:Name="textBox2" Text="TextBox2" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                 Width="190" Margin="10,10,0,0" TextWrapping="Wrap"/>
+        <Button Grid.Row="3" VerticalAlignment="Top"  HorizontalAlignment="Right" Width="30" Height="30" Margin="0,13,40,0" Content="+" FontWeight="Bold" 
+                Background="LawnGreen" x:Name="AddToListBox" Click="AddToListBox_Click"/>
+
+        <ListBox Grid.Row="3" Grid.RowSpan="2" SelectionMode="Multiple" x:Name="listBox1" Height="100" Width="190" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,57,0,0">
+            <ListBoxItem Content="C#" />
+            <ListBoxItem Content="Java" />
+            <ListBoxItem Content="ASP.NET" />
+            <ListBoxItem Content="Spring BOOT" />
+        </ListBox>
+        <Button Grid.Row="4" VerticalAlignment="Top"  HorizontalAlignment="Right" Width="30" Height="30" Margin="0,16,40,0" Content="-" FontWeight="Bold" 
+                Background="IndianRed" x:Name="btnSupp" Click="btnSupp_Click"/>
+
+
+        <!--TreeView-->
+        <!--Offre la possibilité de visualiser des données sous une forme hiérarchique. 
+         Chacun des objets peut en effet avoir un ou plusieurs enfants, qui peuvent eux même être les parents d’autres nœuds,
+        et ainsi de suite
+        -->
+        <Label  Grid.Row="3" Grid.Column="1" Content="Liste des continents : "  FontWeight="Bold" FontSize="15" VerticalAlignment="Top"
+                HorizontalAlignment="Center"/>
+        <TreeView Grid.Row="3" Grid.Column="1" Height="110" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                  Margin="0,42,0,0" Grid.RowSpan="2">
+            <TreeViewItem x:Name="europe" Header="Europe">
+                <TreeViewItem Header="France" />
+                <TreeViewItem Header="Espagne" />
+            </TreeViewItem>
+            <TreeViewItem x:Name="amerique" Header="Amerique">
+                <TreeViewItem Header="Brésil" />
+                <TreeViewItem Header="Canada" />
+            </TreeViewItem>
+            <TreeViewItem x:Name="afrique" Header="Afrique">
+                <TreeViewItem Header="Ethiopie" />
+                <TreeViewItem Header="Maroc" />
+            </TreeViewItem>
+            <TreeViewItem x:Name="asie" Header="Asie">
+                <TreeViewItem Header="Japon" />
+                <TreeViewItem Header="Inde" />
+            </TreeViewItem>
+
+            <TreeViewItem x:Name="oceanie" Header="Océanie">
+                <TreeViewItem Header="Nouvelle-Zélande" />
+                <TreeViewItem Header="Australie" />
+            </TreeViewItem>
+        </TreeView>
+
+
+    </Grid>
+</Window>
