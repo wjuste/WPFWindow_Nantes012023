@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FormationWPF.Controles"
+        xmlns:local="clr-namespace:FormationWPF.Controles" xmlns:sys="clr-namespace:System;assembly=netstandard"
         mc:Ignorable="d"
         Title="_01_ControleCommunWPF" Height="600" Width="900" ResizeMode="NoResize">
     <Grid>
@@ -143,6 +143,48 @@
             </TreeViewItem>
         </TreeView>
 
+        <!--ListView-->
+        <!--Permet d’afficher une liste d’éléments sous la forme d’une grille-->
+        <Label  Grid.Row="2" Grid.Column="2" Content="Liste des clients : "  FontWeight="Bold" FontSize="15" VerticalAlignment="Top"
+                HorizontalAlignment="Center" Padding="1"/>
+        <ListView  Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Height="115" Width="240" Margin="0,42,0,0">
+            <!--Source des données : Definition des date de type DateTime-->
+            <sys:DateTime>1/1/12</sys:DateTime>
+            <sys:DateTime>5/15/18</sys:DateTime>
+            <sys:DateTime>3/9/20</sys:DateTime>
+            <!--On les affiche dans la ListView-->
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Date" Width="70"  />
+                    <!--DisplayMemberBinding permet d'afficher un membre/une propriété de l'objet source
+                        Le mot clé Binding décrit la relation pour la propriété (ex: DayOfWeek)
+                       Binding : Liaison de données
+                    -->
+                    <GridViewColumn Header="Jour" Width="70" DisplayMemberBinding="{Binding DayOfWeek}"/>
+                    <GridViewColumn Header="Année" Width="70" DisplayMemberBinding="{Binding Year}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!--TabControl -->
+        <!--
+            Permet de séparer votre interface en différentes zones.
+            Les 'TabControl' sont souvent utilisés dans les application Windows et même dans l'interface Windows elle même, 
+           comme dans la fenêtre des propriétés pour les fichiers/dossiers etc...
+        -->
+        <Label  Grid.Row="4" Grid.Column="2" Content="TabControl : "  FontWeight="Bold" FontSize="15" VerticalAlignment="Top"
+                HorizontalAlignment="Center" Padding="1" x:Name="label1"/>
+        <TabControl Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="120" Width="244" Margin="30,0,0,16" Grid.RowSpan="2" BorderBrush="#FF372498" BorderThickness="2">
+            <TabItem Header="TabItem1" x:Name="tabItem1">
+                <StackPanel>
+                    <CheckBox>Ecriture</CheckBox>
+                    <CheckBox>Lecture</CheckBox>
+                    <Separator />
+                    <Label x:Name="label2" Height="15" Width="30" Padding="1"/>
+                    <Slider Background="Tomato" x:Name="slider1" Minimum="0" Maximum="10" Margin="5,5,5,0" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
