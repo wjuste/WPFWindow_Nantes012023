@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FormationWPF.Controles" xmlns:sys="clr-namespace:System;assembly=netstandard"
+        xmlns:local="clr-namespace:FormationWPF.Controles" 
+        xmlns:sys="clr-namespace:System;assembly=netstandard"
         mc:Ignorable="d"
         Title="_01_ControleCommunWPF" Height="600" Width="900" ResizeMode="NoResize">
     <Grid>
@@ -176,15 +177,33 @@
                 HorizontalAlignment="Center" Padding="1" x:Name="label1"/>
         <TabControl Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="120" Width="244" Margin="30,0,0,16" Grid.RowSpan="2" BorderBrush="#FF372498" BorderThickness="2">
             <TabItem Header="TabItem1" x:Name="tabItem1">
-                <StackPanel>
+                <StackPanel Background="#FFD7EAEA">
                     <CheckBox>Ecriture</CheckBox>
                     <CheckBox>Lecture</CheckBox>
                     <Separator />
-                    <Label x:Name="label2" Height="15" Width="30" Padding="1"/>
-                    <Slider Background="Tomato" x:Name="slider1" Minimum="0" Maximum="10" Margin="5,5,5,0" />
+                    <Label x:Name="label2" Height="20" Width="35" Padding="1" Background="#FF31404E" Foreground="White" FontWeight="Bold"/>
+                    <Slider Background="#FF7690A7" x:Name="slider1" Minimum="0" Maximum="100" Margin="5,5,5,0" ValueChanged="slider1_ValueChanged" 
+                            IsSnapToTickEnabled="True" TickFrequency="10"  TickPlacement="BottomRight"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
 
+        <!--Password-->
+        <Label  Grid.Row="5" Grid.Column="1" Content="Password : "  FontWeight="Bold" FontSize="15" VerticalAlignment="Center"
+                HorizontalAlignment="Left" Padding="1" Margin="30,0,0,0" />
+        <PasswordBox Grid.Row="5" Grid.Column="1" Width="180" Height="26" VerticalAlignment="Top"
+                HorizontalAlignment="Left" Margin="111,30,0,0" />
+
+        <!--UserControl-->
+        <!--
+            UserControl nous permet de créer nos propres Contrôle
+            Il pourra être utilisé à plusieurs endroits différentes dans notre application ou par plusieurs  applications
+        
+            Création d'un UserControl nommé NumericUpDown
+            
+        -->
+        <Label  Grid.Row="6"  Content="Utilisation d'un UserControl : NumericUpDown (Avec repeatButton) "  FontWeight="Bold" FontSize="14" VerticalAlignment="Center"
+                HorizontalAlignment="Left" Padding="1" Margin="30,0,0,0" Grid.ColumnSpan="2" />
+        <local:NumericUpDown Grid.Row="6"  Grid.Column="1" Grid.ColumnSpan="2" Margin="50,0,-50,0"></local:NumericUpDown >
     </Grid>
 </Window>

@@ -76,5 +76,11 @@ namespace FormationWPF.Controles
                 listBox1.Items.Remove(item);
             }
         }
+
+        private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            label2.Content = slider1.Value.ToString();
+
+        }
     }
 }
