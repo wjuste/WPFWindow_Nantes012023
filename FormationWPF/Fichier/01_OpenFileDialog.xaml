@@ -1,0 +1,25 @@
+﻿<Window x:Class="FormationWPF.Fichier._01_OpenFileDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.Fichier"
+        mc:Ignorable="d"
+        Title="_01_OpenFileDialog" Height="450" Width="800">
+    <Grid>
+        <TextBox Width="450" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,42,0,0" x:Name="FileNameTextBox"/>
+        <Button x:Name="BrowseButton" Content="Browse a file" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="570,45,0,0" Width="75" Height="39"
+                Click="BrowseButton_Click"/>
+
+
+        <ScrollViewer Height="250" Width="700" Margin="0,50,0,0">
+            <Border BorderBrush="#FFDCDBDA" BorderThickness="2"  Opacity="1">
+                <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Top" TextWrapping="Wrap" x:Name="textBlock1" 
+                TextAlignment="Justify"/>
+            </Border>
+        </ScrollViewer>
+        
+
+
+    </Grid>
+</Window>

@@ -27,12 +27,20 @@ namespace FormationWPF.Controles
 
         private void Increase(object sender, RoutedEventArgs e)
         {
-            
+            //On récupère la valeur du textBox 
+            //On la converti en entier pour pouvoir l'incrementer 
+            int num = Convert.ToInt32(valueText.Text);
+
+            //On incremente, puis on converti en string
+            num++;
+            valueText.Text = num.ToString();
         }
 
         private void Decrease(object sender, RoutedEventArgs e)
         {
-
+            int num = Convert.ToInt32(valueText.Text);
+            num--;
+            valueText.Text = num.ToString();
         }
     }
 }

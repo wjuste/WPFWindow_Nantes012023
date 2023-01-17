@@ -1,0 +1,35 @@
+﻿<Window x:Class="FormationWPF.Controles._02_Media"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.Controles"
+        mc:Ignorable="d"
+        Title="_02_Media" Height="600" Width="800">
+    <StackPanel>
+        <Grid>
+            <Label Content="Image" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Margin="89,89,0,0"/>
+            <Border BorderBrush="#FF1D2525" BorderThickness="2" Height="200" Width="300"  VerticalAlignment="Top" HorizontalAlignment="Left"  
+                 Margin="200, 20,0,0" Opacity="0.4" >
+                <Image  x:Name="image1" Stretch="Fill"/>
+            </Border>
+            <Button Content="Ajouter une image" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125" Height="60" Margin="541,85,0,0"
+                    x:Name="button1" Click="button1_Click"/>
+        </Grid>
+        <Grid Margin="0,30" Height="330">
+            <Label Content="MediaElement : " VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Margin="30,89,0,0"/>
+            <Border BorderBrush="#FF1D2525" BorderThickness="2" Height="250" Width="400"  VerticalAlignment="Top" HorizontalAlignment="Left"  
+                 Margin="200,10,0,0" Opacity="0.4">
+                <MediaElement x:Name="medialElement" LoadedBehavior="Manual" Stretch="Fill"/>
+            </Border>
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="50" Margin="630,110,0,0"
+                    x:Name="loadMedia" Click="loadMedia_Click">
+                <TextBlock  Text="Ajouter une vidéo / audio" TextWrapping="Wrap" TextAlignment="Center" Height="50" Width="90" Padding="5"/>
+            </Button>
+
+            <Button Content="Play" x:Name="buttonPlay" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="25" Margin="200,278,0,0" Click="buttonPlay_Click"/>
+            <Button Content="Pause" x:Name="buttonPause" VerticalAlignment="Top" HorizontalAlignment="Center" Width="80" Height="25" Margin="0,278,0,0" Click="buttonPause_Click"/>
+            <Button Content="Stop" x:Name="buttonStop" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="25" Margin="520,278,0,0" Click="buttonStop_Click"/>
+        </Grid>
+    </StackPanel>
+</Window>
