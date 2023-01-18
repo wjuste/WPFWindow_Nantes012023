@@ -71,5 +71,38 @@
         
         Exple : chgt de background si mouse over et focus
     -->
+    <Style x:Key="MyMultiTigger" TargetType="TextBox">
+        <Setter Property="Foreground"  Value="#FF4F7739"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsKeyboardFocused"  Value="True"/>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Background" Value="CornflowerBlue" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="14" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
 
+    <!--
+            DataTrigger = monitoring d'une "valeur" de 
+                          propriété liée (bound property)
+            Un Data Triggers exécute certaines actions lorsque les données liées (bind) satisfont une certaine condition.
+        -->
+    <Style x:Key="MyDataTrigger" TargetType="TextBlock">
+        <Setter Property="Text" Value="No"/>
+        <Setter Property="Foreground"  Value="Red"/>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=checkBox1, Path=IsChecked}" Value="true">
+                <Setter  Property="Text" Value="Yes"/>
+                <Setter Property="Foreground" Value="Green"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
 </ResourceDictionary>
