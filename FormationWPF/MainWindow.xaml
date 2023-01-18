@@ -48,7 +48,7 @@
 
             <MenuItem x:Name="mResources" Header="Mise en forme">
                 <MenuItem x:Name="mRessources" Header="StaticResource - DynamicResource" Click="mRessources_Click" Background="Black"/>
-                
+                <MenuItem x:Name="mMiseEnformeApp" Header="Style - Template" Click="mMiseEnformeApp_Click" Background="Black"/>
             </MenuItem>
 
         </Menu>

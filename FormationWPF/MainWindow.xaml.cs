@@ -172,5 +172,11 @@ namespace FormationWPF
             _01_WindowResource resource = new _01_WindowResource();
             resource.ShowDialog();  
         }
+
+        private void mMiseEnformeApp_Click(object sender, RoutedEventArgs e)
+        {
+            _02_MiseEnFormeApp styleTemplate = new _02_MiseEnFormeApp();
+            styleTemplate.ShowDialog();
+        }
     }
 }
