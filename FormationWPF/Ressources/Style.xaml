@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--On attribut à la ressource (de type SolidColorBrush) une clé ainsi on pourra la referencer 
+        au niveau de la fenêtre (ex: dans un contrôle Bouton)-->
+    <SolidColorBrush x:Key="backgroundbrush" Color="Coral"/>
+    <SolidColorBrush x:Key="backgroundbrushDyn" Color="LawnGreen"/>
+    
+</ResourceDictionary>

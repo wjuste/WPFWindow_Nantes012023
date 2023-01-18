@@ -1,6 +1,7 @@
 ﻿using FormationWPF.Binding;
 using FormationWPF.Controles;
 using FormationWPF.Fichier;
+using FormationWPF.MiseEnForme;
 using FormationWPF.MiseEnPage;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace FormationWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private object _01_WindowResurce;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -156,6 +159,18 @@ namespace FormationWPF
         {
             _03_ValueConverter converter = new _03_ValueConverter();
             converter.ShowDialog();
+        }
+
+        private void miRespondingToChange_Click(object sender, RoutedEventArgs e)
+        {
+            _04_RespondingTochange respondingTochange = new _04_RespondingTochange();
+              respondingTochange.ShowDialog();
+        }
+
+        private void mRessources_Click(object sender, RoutedEventArgs e)
+        {
+            _01_WindowResource resource = new _01_WindowResource();
+            resource.ShowDialog();  
         }
     }
 }

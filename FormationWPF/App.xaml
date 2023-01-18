@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:FormationWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+      <!--  <SolidColorBrush x:Key="backgroundbrush" Color="Coral"/>
+        <SolidColorBrush x:Key="backgroundbrushDyn" Color="LawnGreen"/>
+        -->
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Ressources/Style.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
