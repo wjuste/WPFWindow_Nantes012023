@@ -145,5 +145,17 @@ namespace FormationWPF
             _01_Binding binding = new _01_Binding();
             binding.ShowDialog();
         }
+
+        private void miUpdateSourceTrigger_Click(object sender, RoutedEventArgs e)
+        {
+            _02_UpdateSourceTrigger updateSourceTrigger = new _02_UpdateSourceTrigger();    
+            updateSourceTrigger.ShowDialog();   
+        }
+
+        private void miValueConverter_Click(object sender, RoutedEventArgs e)
+        {
+            _03_ValueConverter converter = new _03_ValueConverter();
+            converter.ShowDialog();
+        }
     }
 }
