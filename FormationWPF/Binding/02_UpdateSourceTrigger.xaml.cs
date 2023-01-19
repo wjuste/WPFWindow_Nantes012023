@@ -23,7 +23,8 @@ namespace FormationWPF.Binding
         {
             InitializeComponent();
 
-            //Nous attribuons la reference this au DataContext, qui indique simplement à la fenêtre que nous voulons qu'elle soit elle-même le contexte des données
+            //Nous attribuons la reference this au DataContext, qui indique simplement à la fenêtre que nous voulons
+            //qu'elle soit elle-même le contexte des données
             this.DataContext = this;
         }
 
