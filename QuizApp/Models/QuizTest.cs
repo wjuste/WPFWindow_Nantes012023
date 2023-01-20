@@ -15,13 +15,13 @@ namespace QuizApp.Models
 
         //ManyToOne
         [ForeignKey("UserId")]
-        public User? User { get; set; } 
+        public User User { get; set; } 
         public int? UserId { get; set; }
 
 
         //ManyToOne
         [ForeignKey("QuizId")]
-        public Quiz? Quiz { get; set; }
+        public Quiz Quiz { get; set; }
         public int? QuizId { get; set; }
     }
 }

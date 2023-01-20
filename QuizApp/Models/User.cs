@@ -10,9 +10,9 @@ namespace QuizApp.Models
     public  class User
     {
         public int? Id { get; set; }   //int? : Ce champ peut accpeter des valeurs null
-        public string? Name { get; set; }
-        public string? Email { get; set; }
-        public string? Password { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
 
         [NotMapped]
         public int TotalPoints { get; set; }

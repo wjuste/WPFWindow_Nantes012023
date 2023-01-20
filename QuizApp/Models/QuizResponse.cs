@@ -9,13 +9,19 @@ namespace QuizApp.Models
     public class QuizResponse
     {
         public int? Id { get; set; }
-        public string? RespText { get; set; }
+        public string RespText { get; set; }
         public bool Correct { get; set; }
 
         //ManyToONE
         public QuizQuestion Question { get; set; }
 
         public int? QuestionId { get; set; }
+
+        public override string ToString()
+        {
+            return RespText;
+        }
+
 
     }
 }

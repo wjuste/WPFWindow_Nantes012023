@@ -10,14 +10,19 @@ namespace QuizApp.Models
     public class Quiz
     {
         public int? Id { get; set; }   //int? : Ce champ peut accpeter des valeurs null
-        public string? Title { get; set; }
+        public string Title { get; set; }
 
         //ManyToOne
         //Many Quiz to One Category
         [ForeignKey("CategoryId")]
-        public QuizCategory? Category { get; set; }
+        public QuizCategory Category { get; set; }
 
         public int? CategoryId { get; set; }  //int? : Ce champ peut accpeter des valeurs null
+
+        public override string ToString()
+        {
+            return this.Title;
+        }
 
     }
 }
