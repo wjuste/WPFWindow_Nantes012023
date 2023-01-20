@@ -38,7 +38,43 @@ namespace FormationWPF.Binding
 
             EvtLst = new ObservableCollection<MyEvent>(listEvents);
 
+
             InitializeComponent();
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            MyEvent evt = new MyEvent { Title = "event10", Description = "blabla", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(5) };
+
+            eventService.SaveOrUpdate(evt);
+
+            EvtLst.Add(evt);
+        }
+
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            db.Dispose();
+        }
+
+        private void BtnSaveOrUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            MyEvent evtSel = null;
+
+            if(lstView.SelectedItem != null)
+            {
+                evtSel = lstView.SelectedItem as MyEvent; 
+                evtSel.Title = TBoxTitle2.Text;
+                lstView.SelectedIndex = -1;
+            } else
+            {
+                evtSel = new MyEvent { Title = "event2500", Description = "bla", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(10) };
+                EvtLst.Add(evtSel);
+            }
+
+            eventService.SaveOrUpdate(evtSel);
+  
+
         }
     }
 }
